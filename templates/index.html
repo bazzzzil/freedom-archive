@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestinian Prisoners Released 2025</title>
+    <link rel="stylesheet" href="static/styles.css">  <!-- Link to CSS for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="The Palestine Accountability Archive">
+    <meta property="og:description" content="A grassroots project to hold our political leaders accountable. Free Palestine!">
+    <meta property="og:url" content="https://palaccarchive.pythonanywhere.com/">
+    <!-- <meta property="og:image" content="https://www.yourwebsite.com/images/preview-image.jpg"> -->
+    <meta property="og:type" content="website">
+
+    <!-- Palestine flag as webpage icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇵🇸</text></svg>">    
+    
+</head>
+<body>
+    <header>
+        <h1>Palestinian Prisoners Released 2025</h1>
+        <p>This is a database of the translated names of Palestinian prisoners "Israel" has vowed to release as part of the terms of the ceasefire following the victory of the Palestinian resistance.</p>
+        <p>The Zionist entity only made the list available in Hebrew, and so we have translated into English so that Palestinians can find their family members. You can search by name, birthday, ID, or any other available datapoint.</p>
+    </header>
+    <div class="container">
+
+        <input type="text" id="search" placeholder="Search..." onkeyup="debounceUpdateSearch()" class="search-bar" value="{{ search }}">  <!-- Search bar -->
+
+        <script>
+            let timeout = null;  // Variable to hold the timeout ID
+        
+            // Function to update the search query in the URL with a debounce effect
+            function debounceUpdateSearch() {
+                clearTimeout(timeout);  // Clear the previous timeout
+                timeout = setTimeout(() => {
+                    const input = document.getElementById("search").value;  // Get the search input
+                    const currentUrl = new URL(window.location.href);  // Get the current URL
+                    currentUrl.searchParams.set('search', input);  // Set the search parameter
+                    currentUrl.searchParams.set('page', 1);  // Reset to the first page
+                    window.location.href = currentUrl;  // Redirect to the updated URL
+                }, 300);  // Delay of 300 milliseconds
+            }
+        </script>
+        
+        <div class="table-responsive">
+            {{ data|safe }}  <!-- Render the HTML table if data is available -->
+        </div>
+        
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="?page={{ page - 1 }}&search={{ search }}" class="prev-button">Previous</a>
+        {% endif %}
+        
+        <span class="current-page">Page {{ page }} of {{ total_pages }}</span>
+        
+        {% if page < total_pages %}
+            <a href="?page={{ page + 1 }}&search={{ search }}" class="next-button">Next</a>
+        {% endif %}
+    </div>
+    
+
+    </div>
+    <footer>
+        <p>Source: Zionist Ministry of Justice</p>
+    </footer>
+    <script>
+        // Function to filter table rows based on search input
+        function filterTable() {
+            const input = document.getElementById("search").value.toLowerCase();  // Get the search input
+            const rows = document.querySelectorAll(".data tbody tr");  // Select all table rows
+
+            // Loop through each row to check if it matches the search input
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName("td");  // Get all cells in the row
+                let found = false;  // Flag to track if a match is found
+                for (let cell of cells) {
+                    // Check if the cell text includes the search input
+                    if (cell.textContent.toLowerCase().includes(input)) {
+                        found = true;  // Set flag to true if a match is found
+                        break;  // Exit the loop if a match is found
+                    }
+                }
+                // Show or hide the row based on the search result
+                row.style.display = found ? "" : "none";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;  /* Use a clean, modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;  /* Light background color */
+    color: #333;  /* Dark text color for readability */
+}
+
+header {
+    background-color: #085211;  /* Header background color */
+    color: white;  /* Header text color */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;  /* Larger font size for the title */
+}
+
+p {
+    margin: 5px 0 20px;  /* Spacing for the subtitle */
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: auto;  /* Center the container */
+    padding: 20px;
+    background: white;  /* White background for the content area */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    border-radius: 8px;  /* Rounded corners */
+}
+
+/* Search Bar Styles */
+.search-bar {
+    width: 100%;  /* Full width */
+    padding: 10px;  /* Padding for comfort */
+    margin-bottom: 20px;  /* Space below the search bar */
+    border: 1px solid #ddd;  /* Light border */
+    border-radius: 4px;  /* Rounded corners */
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;  /* Allow horizontal scrolling */
+}
+
+.data {
+    width: 100%;  /* Full width for the table */
+    border-collapse: collapse;  /* Collapse borders for a cleaner look */
+}
+
+.data th, .data td {
+    border: 1px solid #ddd;  /* Light border for table cells */
+    padding: 12px;  /* Padding for table cells */
+    text-align: left;  /* Align text to the left */
+}
+
+.data th {
+    background-color: #f2f2f2;  /* Light gray background for header */
+    font-weight: bold;  /* Bold text for headers */
+}
+
+.data tr:hover {
+    background-color: #e9ecef;  /* Light background on row hover */
+}
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px;  /* Space above pagination controls */
+    text-align: center;  /* Center the pagination controls */
+}
+
+.prev-button, .next-button {
+    text-decoration: none;  /* Remove underline from links */
+    color: #0056b3;  /* Link color */
+    font-weight: bold;  /* Bold text for links */
+    padding: 10px 15px;  /* Padding for better click area */
+    border-radius: 4px;  /* Rounded corners */
+    background-color: #f2f2f2;  /* Light background */
+    transition: background-color 0.3s;  /* Smooth transition */
+    margin: 0 5px;  /* Space between buttons */
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: #e9ecef;  /* Light background on hover */
+}
+
+.current-page {
+    margin: 0 15px;  /* Space around the current page text */
+    font-weight: bold;  /* Bold text for emphasis */
+    color: #333;  /* Dark text color */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;  /* Center the footer text */
+    padding: 10px 0;  /* Padding for the footer */
+    background-color: #085211;  /* Footer background color */
+    color: white;  /* Footer text color */
+    position: relative;  /* Positioning for footer */
+    bottom: 0;  /* Stick to the bottom */
+    width: 100%;  /* Full width */
+}
+
