@@ -23,6 +23,17 @@ p {
     margin: 5px 0 20px;  /* Spacing for the subtitle */
 }
 
+/* Link color */
+a {
+    color: #ffff14;
+    text-decoration: none;
+  }
+
+  /* Link color after click */
+a:visited {
+    color: #e0aaf9;
+  }
+
 /* Container Styles */
 .container {
     width: 80%;

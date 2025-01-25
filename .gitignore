@@ -1,2 +1,6 @@
 .venv
 .DS_Store
+keys.txt
+keys.txt.pub
+key.txt
+key.txt.pub
