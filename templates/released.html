@@ -21,16 +21,15 @@
 <body>
     <header>
        <h1>Toufan Al-Ahrar</h1>
-        <h2>List of Palestinian Hostages to be Released in 2025</h2>
-        <p>This is a database of the translated names of Palestinian hostages the zionist entity has vowed to release as part of the terms of the ceasefire following the victory of the Palestinian resistance.</p>
-        <p>The zionist entity only made the list available in Hebrew, and so we have translated into English so that Palestinians can find their family members. This site is only as accurate as our sources. The zionist entity may modify the list with no warning and our updates may lag. </p>
-        <p><b>Disclaimer: These are direct translations from Hebrew with corrections applied to the names of individuals only.</b></p>
+        <h2>List of Released Palestinians</h2>
+        <p>This is the list of Palestinians confirmed to be released back to their families and communities compiled from official sources and news organizations.</p>
     </header>
+    
     <nav>
         <a href="{{ url_for('index') }}"> Home </a>
         <a href="{{ url_for('released') }}"> Released Palestinians </a>
     </nav>
- 
+
     <div class="container">
         <p>You can search by first name, last name, both names, by birthday in the format YYYY-MM-DD.</p>
         <input type="text" id="search" placeholder="Search..." onkeydown="handleKeyDown(event)" class="search-bar" value="{{ search }}">  <!-- Search bar -->
@@ -68,7 +67,8 @@
 
 
     </div>
-    <footer>Last Updated: Friday, January 31, 2025 </p>
+    <footer>
+        <p>Last Updated: Friday, January 31, 2025 </p>
     </footer>
     <script>
         // Function to filter table rows based on search input

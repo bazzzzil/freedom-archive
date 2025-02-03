@@ -23,7 +23,12 @@ p {
     margin: 5px 0 20px;  /* Spacing for the subtitle */
 }
 
-/* Link color */
+/* Navigation styles */
+nav {
+    background-color: #042909; /* Darker green navigation background color */
+
+}
+
 a {
     color: #ffff14;
     text-decoration: none;
@@ -33,6 +38,13 @@ a {
 a:visited {
     color: #e0aaf9;
   }
+
+nav a {
+    color: #fff; /* Navigation link color */
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
 
 /* Container Styles */
 .container {
